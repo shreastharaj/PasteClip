@@ -6,6 +6,25 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
     <item>
+      <title>Version 1.0.4</title>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+      <description><![CDATA[
+        <ul>
+          <li>Fixed critical data loss bug on computer restart</li>
+          <li>Improved data backup reliability (WAL/SHM files included)</li>
+          <li>Added automatic save on app focus loss</li>
+        </ul>
+      ]]></description>
+      <pubDate>Sun, 02 Mar 2026 11:00:00 +0900</pubDate>
+      <enclosure
+        url="https://github.com/minsang-alt/PasteClip/releases/download/v1.0.4/PasteClip-1.0.4.dmg"
+        type="application/octet-stream"
+        sparkle:edSignature="tJAseJXxcFLxqUXBfZkgOyaRzzCCv9cUBm8hFOnJszNmlWR0ROqjMhbfaWWQY0OsnmRM5fsBLwkgpfWp1W6aDw=="
+        length="4602594"
+      />
+    </item>
+    <item>
       <title>Version 1.0.3</title>
       <sparkle:version>3</sparkle:version>
       <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>

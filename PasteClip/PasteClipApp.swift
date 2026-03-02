@@ -15,22 +15,31 @@ struct PasteClipApp: App {
             ExcludedApp.self,
         ])
 
-        // Back up existing store before SwiftData opens it (prevents silent data loss on schema mismatch)
-        let fm = FileManager.default
-        if let appSupport = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
-            let storeURL = appSupport.appendingPathComponent("default.store")
-            if fm.fileExists(atPath: storeURL.path) {
-                let backupURL = appSupport.appendingPathComponent("default.store.backup")
-                try? fm.removeItem(at: backupURL)
-                try? fm.copyItem(at: storeURL, to: backupURL)
-            }
-        }
+        let storeURL = StoreManager.resolveStoreURL()
+        StoreManager.backupStore(at: storeURL)
 
-        let config = ModelConfiguration(isStoredInMemoryOnly: false)
+        let config = ModelConfiguration(url: storeURL)
+
+        // 1차: 정상 오픈
         do {
             return try ModelContainer(for: schema, configurations: [config])
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            StoreManager.logger.error("Failed to open store: \(error.localizedDescription)")
+        }
+
+        // 2차: 손상된 store 삭제 후 재시도 (백업은 이미 존재)
+        StoreManager.deleteStore(at: storeURL)
+        do {
+            return try ModelContainer(for: schema, configurations: [config])
+        } catch {
+            StoreManager.logger.error("Recovery failed: \(error.localizedDescription)")
+        }
+
+        // 3차: in-memory 폴백 (앱은 실행되지만 데이터 비영속)
+        do {
+            return try ModelContainer(for: schema, configurations: [ModelConfiguration(isStoredInMemoryOnly: true)])
+        } catch {
+            fatalError("Cannot create any ModelContainer: \(error)")
         }
     }()
 
@@ -67,6 +76,15 @@ struct PasteClipApp: App {
             // Save SwiftData on app termination
             NotificationCenter.default.addObserver(
                 forName: NSApplication.willTerminateNotification,
+                object: nil,
+                queue: .main
+            ) { _ in
+                try? sharedModelContainer.mainContext.save()
+            }
+
+            // Save when app loses focus (guards against force-kill/power loss)
+            NotificationCenter.default.addObserver(
+                forName: NSApplication.didResignActiveNotification,
                 object: nil,
                 queue: .main
             ) { _ in
