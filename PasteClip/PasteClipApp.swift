@@ -79,7 +79,9 @@ struct PasteClipApp: App {
                 object: nil,
                 queue: .main
             ) { _ in
-                try? sharedModelContainer.mainContext.save()
+                MainActor.assumeIsolated {
+                    try? sharedModelContainer.mainContext.save()
+                }
             }
 
             // Save when app loses focus (guards against force-kill/power loss)
@@ -88,7 +90,9 @@ struct PasteClipApp: App {
                 object: nil,
                 queue: .main
             ) { _ in
-                try? sharedModelContainer.mainContext.save()
+                MainActor.assumeIsolated {
+                    try? sharedModelContainer.mainContext.save()
+                }
             }
         }
     }

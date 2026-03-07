@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/minsang-alt/PasteClip/releases/latest"><img src="https://img.shields.io/github/v/release/minsang-alt/PasteClip?style=flat-square" alt="Release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/minsang-alt/PasteClip?style=flat-square" alt="License"></a>
-  <img src="https://img.shields.io/badge/macOS-15%2B-blue?style=flat-square" alt="macOS 15+">
+  <img src="https://img.shields.io/badge/macOS-14%2B-blue?style=flat-square" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Swift-6-orange?style=flat-square" alt="Swift 6">
 </p>
 
@@ -82,7 +82,7 @@ Download the latest `.dmg` from the [Releases](https://github.com/minsang-alt/Pa
 | Language | Swift 6 (strict concurrency) |
 | UI | SwiftUI + NSPanel (non-activating) |
 | Data | SwiftData |
-| Target | macOS 15+ |
+| Target | macOS 14+ |
 | Dependencies | [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) |
 | Build | [XcodeGen](https://github.com/yonaskolb/XcodeGen) |
 
