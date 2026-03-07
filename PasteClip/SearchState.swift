@@ -98,7 +98,7 @@ final class SearchState {
         if let current = selectedIndex {
             selectedIndex = max(0, min(current + offset, maxIndex))
         } else {
-            selectedIndex = offset > 0 ? 0 : maxIndex
+            selectedIndex = 0
         }
     }
 }

@@ -33,12 +33,13 @@ struct PasteService {
             // 임시 PNG 파일 저장 — 터미널 앱(Ghostty 등)이 파일 경로로 이미지를 전달
             let tempURL = Self.writeTempPNG(pngData, sourceApp: item.sourceAppName)
 
-            // PNG + TIFF + 파일 URL 모두 클립보드에 쓰기
+            // NSURL writeObjects로 파일 URL을 먼저 쓴 뒤 PNG/TIFF 추가
+            // — Ghostty가 이미지 파일로 인식하려면 이 순서가 필요
+            if let tempURL {
+                pasteboard.writeObjects([tempURL as NSURL])
+            }
             pasteboard.setData(pngData, forType: .png)
             pasteboard.setData(tiffData, forType: .tiff)
-            if let tempURL {
-                pasteboard.setString(tempURL.absoluteString, forType: .fileURL)
-            }
 
         case .url:
             if let text = item.textContent {
@@ -94,9 +95,14 @@ struct PasteService {
 
     private static func writeTempPNG(_ data: Data, sourceApp: String?) -> URL? {
         try? FileManager.default.createDirectory(atPath: tempDir, withIntermediateDirectories: true)
-        let appName = sourceApp ?? "PasteClip"
+        let asciiOnly = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 -_")
+        let safeName = sourceApp?
+            .unicodeScalars.filter { asciiOnly.contains($0) }
+            .reduce(into: "") { $0.append(String($1)) }
+            .trimmingCharacters(in: .whitespaces)
+        let appName = (safeName?.isEmpty ?? true) ? "PasteClip" : safeName!
         let timestamp = filenameDateFormatter.string(from: Date())
-        let filename = "\(appName) \(timestamp).png"
+        let filename = "\(appName) \(timestamp).png" as String
         let url = URL(fileURLWithPath: tempDir + filename)
         do {
             try data.write(to: url)

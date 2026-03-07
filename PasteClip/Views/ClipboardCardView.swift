@@ -23,6 +23,14 @@ struct ClipboardCardView: View {
     }
 
     var body: some View {
+        if item.isDeleted {
+            EmptyView()
+        } else {
+            cardBody
+        }
+    }
+
+    private var cardBody: some View {
         VStack(spacing: 0) {
             headerView
 
