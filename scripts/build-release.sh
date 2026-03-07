@@ -39,7 +39,6 @@ xcodebuild archive \
     -configuration Release \
     -archivePath "${ARCHIVE_PATH}" \
     CODE_SIGN_IDENTITY="-" \
-    CODE_SIGNING_ALLOWED=NO \
     ONLY_ACTIVE_ARCH=NO \
     | tail -5
 
